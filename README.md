@@ -4,7 +4,7 @@ This Google Cloud Run application can be used to forward traffic fronted from th
 
 This is a POC application only and has a few potential indicators that could be use to identify running instances, so read the code in main.py and modify as required before attempting to use.
 
-The code here is functionally identical to the [GCP App Engine app](https://github.com/stephenbradshaw/GCPAppEngineC2Forwarder) but the Cloud Run deployment approach is a little easier to manage, so I would recommend it over the GCP App Engine approach.
+The code here is functionally identical to the [GCP App Engine app](https://github.com/stephenbradshaw/GCPAppEngineC2Forwarder) but the Cloud Run deployment approach is a little easier to manage, so I would recommend it over the GCP App Engine approach as long as the Cloud Run frontend domain is equally suitable for you.
 
 
 # Pre deployment setup and configuration
