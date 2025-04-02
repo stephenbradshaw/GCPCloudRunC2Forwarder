@@ -62,3 +62,18 @@ Once complete this will spit out a URL at which your C2 service can be reached, 
 
 
 You can monitor/troubleshoot/delete the application after this point using the [GCP Cloud Run console](https://console.cloud.google.com/run)
+
+
+# API Gateway Forwarding
+
+
+The [GCP API Gateway service](https://cloud.google.com/api-gateway/docs) can also be used to forward traffic to your C2 using the Cloud Run service as an intermediary step - providing an alternate frontend address for your implants to reach out to with an address in the form `https://<GATEWAY_NAME>-<8_DIGIT_STRING>.<REGION_ID>.gateway.dev`.
+
+The `api_forward.yaml` config template provides a basis for an API config swagger file that can be used to create such a API Gateway.
+
+The high level process for creating such a Gateway that forwards to Cloud Run is described [here](https://cloud.google.com/api-gateway/docs/get-started-cloud-run).
+
+Change the following values in the template `api_forward.yaml` template and use it as your uploaded API configuration:
+* `API_ID`- change to the name of the API you create, e.g. `testapi`
+* `APP_URL` - change to the URL of the Cloud Run service, e.g. `https://<SERVICE_NAME>-<12_DIGIT_NUMBER>.<REGION>.run.app`
+

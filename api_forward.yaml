@@ -1,0 +1,85 @@
+swagger: '2.0'
+info:
+  title: API_ID
+  description: Forwarding API specification
+  version: 1.0.0
+schemes:
+  - https
+produces:
+  - application/json
+  - text/html
+  - text/css
+  - image/gif
+  - image/jpeg
+  - image/png
+  - image/svg+xml
+  - text/xml
+  - text/javascript
+  - application/octet-stream
+  - gzip
+  - deflate
+x-google-backend:
+  address: APP_URL
+paths:
+  /{allpath=**}:
+    get:
+      parameters:
+        - in: path
+          name: allpath
+          type: string
+          required: true
+          description: path
+      summary: Main path GET
+      operationId: main
+      responses:
+        '200':
+          description: A successful response
+        '301':
+          description: Moved permenantly
+        '302':
+          description: Found
+        '403':
+          description: Access denied
+        '404':
+          description: Not found
+        '500':
+          description: Internal Server Error
+        '501':
+          description: Not implemented
+        '502':
+          description: Bad gateway
+        '503':
+          description: Service Unavailable
+        '504':
+          description: Gateway timeout
+    post:
+      parameters:
+        - in: path
+          name: allpath
+          type: string
+          required: true
+          description: path
+      summary: Main path POST
+      operationId: main_post
+      responses:
+        '200':
+          description: A successful response
+        '301':
+          description: Moved permenantly
+        '302':
+          description: Found
+        '403':
+          description: Access denied
+        '404':
+          description: Not found
+        '500':
+          description: Internal Server Error
+        '501':
+          description: Not implemented
+        '502':
+          description: Bad gateway
+        '503':
+          description: Service Unavailable
+        '504':
+          description: Gateway timeout
+      
