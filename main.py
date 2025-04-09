@@ -23,7 +23,7 @@ def root(url):
     try:
         r = requests.request(request.method, path, params=request.args, stream=True, 
                             headers=dict(request.headers), allow_redirects=False, 
-                            data=request.form, timeout=timeout)
+                            data=request.get_data(), timeout=timeout)
         def generate():
             for chunk in r.raw.stream(decode_content=False):
                 yield chunk
