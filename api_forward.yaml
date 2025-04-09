@@ -34,6 +34,8 @@ paths:
       responses:
         '200':
           description: A successful response
+        '204':
+          description: No content
         '301':
           description: Moved permenantly
         '302':
@@ -64,6 +66,8 @@ paths:
       responses:
         '200':
           description: A successful response
+        '204':
+          description: No content
         '301':
           description: Moved permenantly
         '302':
